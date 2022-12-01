@@ -1,3 +1,4 @@
+
 module acendeled (memoria1,memoria2,acende,led1, led2,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15);
 // Esse módulo compara os valores de 0 a 15 com o valor da memória do jogador 1 e faz o mesmo com a memória do jogador 2.
 // Se pelo menos uma das saídas desses comparadores for 1, o led deve acender.
