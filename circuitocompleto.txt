@@ -1,0 +1,30 @@
+module circuitocompleto (posicao1,posicao2, SinalBotao1, SinalBotao2, SinalBotao3,SinalBotao4,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15);
+// Nesse módulo, o jogo em si será implementado.
+input [3:0] posicao1,posicao2;
+input wire [3:0] a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15;
+input SinalBotao1, SinalBotao2, SinalBotao3, SinalBotao4;
+wire posicaofinal1, posicaofinal2;
+wire led1, led2;
+reg finaldojogo = 0;
+
+while(!finaldojogo)begin 
+always @ (posedge SinalBotao1 or posedge SinalBotao2 or posedge SinalBotao3 or posedge SinalBotao4) begin
+    if(SinalBotao3) begin
+        Botao1 primeirobotao(SinalBotao3, posicaofinal1, posicaofinal2);
+    end
+    else if (sinalbotao4)begin 
+        Botao2 segundobotao(SinalBotao4, posicaofinal1, posicaofinal2);
+    end
+    if(SinalBotao1 == 2'b01 or SinalBotao2 == 2'b01) begin
+        botoes_jogador2 terceirobotao(SinalBotao1, SinalBotao2, posicaofinal2, posicaofinal1);
+    end
+        
+    acendeled ledsacesos(posicaofinal1,posicaofinal2,acende,led1, led2,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15);
+    
+    if(led1==15 or led2==0) begin
+        finaldojogo == 1;
+    end
+
+end
+end
+endmodule
