@@ -1,0 +1,8 @@
+module somadorcompleto (a,b,cin,s,cout);  //modulo necessario para fazer o somador de 4 bits
+input a,b,cin;
+output s,cout;
+
+assign s = a ^ b ^ cin;
+assign cout = a&b | a&cin | b&cin;
+
+endmodule

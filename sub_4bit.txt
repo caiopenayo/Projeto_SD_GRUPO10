@@ -1,0 +1,11 @@
+module sub_4bit(d,bo,a,b,bin); //subtrador de 4 bits
+output [3:0]d;
+output bo;
+input [3:0]a,b;
+input bin;
+wire [2:0]bi;
+full_3 sub1(d[0],bi[0],a[0],~b[0],1);
+full_3 sub2(d[1],bi[1],a[1],~b[1],bi[0]);
+full_3 sub3(d[2],bi[2],a[2],~b[2],bi[1]);
+full_3 sub4(d[3],bo,a[3],~b[3],bi[2]);
+endmodule

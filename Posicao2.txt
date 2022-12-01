@@ -1,0 +1,12 @@
+module Posicao2(comparador, din, dout); // modulo que devolve a posição do segundo jogador
+    input comparador;
+    input[3:0] din;
+    output reg [3:0] dout;
+    
+    initial begin
+        dout = 4'b1111;
+    end
+   always @(*) if(!comparador)begin
+        dout <= din;
+    end
+endmodule

@@ -1,0 +1,21 @@
+module ContaTurno(turno);//devolve o turno do jogo que varia no seguinte intervalo: (1,2,3,3,2,1,0)
+    output reg [2:0] turno;
+    reg [1:0] ciclo1;
+
+    initial begin
+        turno = 3'b000;
+        ciclo1 = 2'b01;
+    end
+    always @ (*)begin
+        if(ciclo1)begin
+            turno = turno + 3'b001;
+            if(turno == 3'b100)
+                ciclo1 = 0;
+        end
+        if(!ciclo1) begin
+            turno = turno - 3'b001;
+            if(turno == 3'b000)
+                ciclo1 = 1;
+        end
+    end
+endmodule

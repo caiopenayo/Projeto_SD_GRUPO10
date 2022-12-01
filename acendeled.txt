@@ -1,0 +1,227 @@
+module acendeled (memoria1,memoria2,acende,led1, led2,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15);
+// Esse módulo compara os valores de 0 a 15 com o valor da memória do jogador 1 e faz o mesmo com a memória do jogador 2.
+// Se pelo menos uma das saídas desses comparadores for 1, o led deve acender.
+input [3:0]memoria1;
+input [3:0]memoria2;
+input wire [3:0] a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15;
+output reg acende;
+output reg led1, led2;
+wire aeqb01, aeqb02,aeqb11, aeqb12,aeqb21, aeqb22,aeqb31, aeqb32,aeqb41, aeqb42,aeqb51, aeqb52,aeqb61, aeqb62,aeqb71, aeqb72,aeqb81, aeqb82,aeqb91, aeqb92,aeqb101, aeqb102;
+wire aeqb111, aeqb112,aeqb121, aeqb122,aeqb131, aeqb132,aeqb141, aeqb142,aeqb151, aeqb152;
+
+assign a0=4'b0000;
+assign a1=4'b0001;
+assign a2=4'b0010;
+assign a3=4'b0011;
+assign a4=4'b0100;
+assign a5=4'b0101;
+assign a6=4'b0110;
+assign a7=4'b0111;
+assign a8=4'b1000;
+assign a9=4'b1001;
+assign a10=4'b1010;
+assign a11=4'b1011;
+assign a12=4'b1100;
+assign a13=4'b1101;
+assign a14=4'b1110;
+assign a15=4'b1111;
+
+comp comp1(a0,memoria1,aeqb01);
+comp comp2(a0,memoria2,aeqb02);
+comp comp3(a1,memoria1,aeqb11);
+comp comp4(a1,memoria2,aeqb12);
+comp comp5(a2,memoria1,aeqb21);
+comp comp6(a2,memoria2,aeqb22);
+comp comp7(a3,memoria1,aeqb31);
+comp comp8(a3,memoria2,aeqb32);
+comp comp9(a4,memoria1,aeqb41);
+comp comp10(a4,memoria2,aeqb42);
+comp comp11(a5,memoria1,aeqb51);
+comp comp12(a5,memoria2,aeqb52);
+comp comp13(a6,memoria1,aeqb61);
+comp comp14(a6,memoria2,aeqb62);
+comp comp15(a7,memoria1,aeqb71);
+comp comp16(a7,memoria2,aeqb72);
+comp comp17(a8,memoria1,aeqb81);
+comp comp18(a8,memoria2,aeqb82);
+comp comp19(a9,memoria1,aeqb91);
+comp comp20(a9,memoria2,aeqb92);
+comp comp21(a10,memoria1,aeqb101);
+comp comp22(a10,memoria2,aeqb102);
+comp comp23(a11,memoria1,aeqb111);
+comp comp24(a11,memoria2,aeqb112);
+comp comp25(a12,memoria1,aeqb121);
+comp comp26(a12,memoria2,aeqb122);
+comp comp27(a13,memoria1,aeqb131);
+comp comp28(a13,memoria2,aeqb132);
+comp comp29(a14,memoria1,aeqb141);
+comp comp30(a14,memoria2,aeqb142);
+comp comp31(a15,memoria1,aeqb151);
+comp comp32(a15,memoria2,aeqb152);
+always @(*) begin
+   acende = 0;
+
+if((aeqb01)==1) begin
+    acende = 1;
+    led1 = 0;
+end
+
+if((aeqb02)==1) begin
+    acende = 1;
+    led2 = 0;
+end
+
+if((aeqb11)==1) begin
+    acende = 1;
+    led1 = 1;
+end
+
+if((aeqb12)==1) begin
+    acende = 1;
+    led2 = 1;
+end
+
+if((aeqb21)==1) begin
+    acende = 1;
+    led1 = 2;
+end
+
+if((aeqb22)==1) begin
+    acende = 1;
+    led2 = 2;
+end
+
+if((aeqb31)==1) begin
+    acende = 1;
+    led1= 3;
+end
+
+if((aeqb32)==1) begin
+    acende = 1;
+    led2= 3;
+end
+
+if((aeqb41)==1) begin
+    acende = 1;
+    led1 = 4;
+end
+
+if((aeqb42)==1) begin
+    acende = 1;
+    led2 = 4;
+end
+
+if((aeqb51)==1) begin
+    acende = 1;
+    led1 = 5;
+end
+
+if((aeqb52)==1) begin
+    acende = 1;
+    led2 = 5;
+end
+
+if((aeqb61)==1) begin
+    acende = 1;
+    led1 = 6;
+end
+
+if((aeqb62)==1) begin
+    acende = 1;
+    led2 = 6;
+end
+
+if((aeqb71)==1) begin
+    acende = 1;
+    led1 = 7;
+end
+
+if((aeqb72)==1) begin
+    acende = 1;
+    led2 = 7;
+end
+
+if((aeqb81)==1) begin
+    acende = 1;
+    led1 = 8;
+end
+
+if((aeqb82)==1) begin
+    acende = 1;
+    led2 = 8;
+end
+
+if((aeqb91)==1) begin
+    acende = 1;
+    led1 = 9;
+end
+
+if((aeqb92)==1) begin
+    acende = 1;
+    led2 = 9;
+end
+
+if((aeqb101)==1) begin
+    acende = 1;
+    led1 = 10;
+end
+
+if((aeqb102)==1) begin
+    acende = 1;
+    led2 = 10;
+end
+
+if((aeqb111)==1) begin
+    acende = 1;
+    led1 = 11;
+end
+
+if((aeqb112)==1) begin
+    acende = 1;
+    led2 = 11;
+end
+
+if((aeqb121)==1) begin
+    acende = 1;
+    led1 = 12;
+end
+
+if((aeqb122)==1) begin
+    acende = 1;
+    led2 = 12;
+end
+
+if((aeqb131)==1) begin
+    acende = 1;
+    led1 = 13;
+end
+
+if((aeqb132)==1) begin
+    acende = 1;
+    led2 = 13;
+end
+
+if((aeqb141)==1) begin
+    acende = 1;
+    led1 = 14;
+end
+
+if((aeqb142)==1) begin
+    acende = 1;
+    led2 = 14;
+end
+
+if((aeqb151)==1) begin
+    acende = 1;
+    led1 = 15;
+end
+
+if((aeqb152)==1) begin
+    acende = 1;
+    led2 = 15;
+end
+
+end
+
+endmodule
+

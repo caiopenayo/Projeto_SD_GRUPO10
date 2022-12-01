@@ -1,0 +1,23 @@
+
+module Botao3(SinalBotao3, posicaofinal, posicaoadversaria);
+    input SinalBotao3;
+    output posicaofinal, posicaoadversaria;
+    wire turno, posicao, soma, cout, borrowout,comparacao;
+    reg zero, um, guarda;
+
+    initial begin
+        guarda = 2'b01;
+        zero = 2'b00;
+        um = 2'b01;
+       
+    end
+
+        ContaTurno contaturnos1(.turno(turno));
+        Posicao1 posicaoprimeirojogador1(.comparador(guarda), .din(zero), .dout(posicao));
+        somador4b soma1(.a(turno), .b(posicao), .cin(zero), .s(soma), .cout(cout));
+        sub_4bit subtrador1(.d(posicao), .bo(borrowout), .a(posicao), .b(um), .bin(zero));
+        Posicao2 posicaosegundojogador1(.comparador(guarda), .din(zero), .dout(posicaoadversaria));
+        comp comparador2(.a(posicao1), .b(posicaoadversaria), .aeqb(comparacao));
+        Posicao1 posicaoprimeirojogador2(.comparador(comparacao), .din(soma), .dout(posicaofinal));
+
+endmodule

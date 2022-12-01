@@ -1,0 +1,35 @@
+module botoes_jogador2(SinalBotao1, SinalBotao2, posicaofinal, posicaoadversaria);
+    input reg SinalBotao1, SinalBotao2;
+    input wire posicaoadversaria;
+    output posicaofinal;
+    wire turno, posicao, soma,cout, borrowout, comparacao;
+    reg zero, um, guarda;
+
+    initial begin
+        guarda = 2'b01;
+        zero = 2'b00;
+        um = 2'b01;
+    end
+
+     if(SinalBotao1)begin
+        ContaTurno contaturnos3(.turno(turno));
+        Posicao2 posicaosegundojogador3(.comparador(guarda), .din(zero), .dout(posicao));
+        somador4b soma3(.a(turno), .b(um), .cin(zero), .s(soma), .cout(cout));
+        sub_4bit subtrador3(.d(posicao), .bo(borrowout), .a(posicao), .b(soma), .bin(zero));
+        Posicao1 posicaoprimeirojogador3(.comparador(guarda), .din(zero), .dout(posicaoadversaria));
+        comp comparador3(.a(posicao), .b(posicaoadversaria), .aeqb(comparacao));
+        Posicao2 posicaosegundojogador6(.comparador(comparacao), .din(soma), .dout(posicaofinal));
+        end
+
+        else begin
+        ContaTurno contaturnos4(.turno(turno));
+        Posicao2 posicaosegundojogador4(.comparador(guarda), .din(zero), .dout(posicao));
+        somador4b soma4(.a(turno), .b(um), .cin(zero), .s(soma), .cout(cout));
+        sub_4bit subtrador4(.d(posicao), .bo(borrowout), .a(posicao), .b(soma), .bin(zero));
+        Posicao1 posicaoprimeirojogador4(.comparador(guarda), .din(zero), .dout(posicaoadversaria));
+        somador4b soma44(.a(posicao), .b(um), .cin(zero), .s(soma), .cout(cout));
+        comp comparador4(.a(posicao), .b(posicaoadversaria), .aeqb(comparacao));
+        Posicao2 posicaosegundojogador5(.comparador(comparacao), .din(soma), .dout(posicaofinal));
+        end
+
+endmodule
