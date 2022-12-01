@@ -1,3 +1,4 @@
+
 module full_3(s,co,a,b,c); //modulo necessario pra fazer o subtrador
 input a,b,c;
 output reg s,co;
