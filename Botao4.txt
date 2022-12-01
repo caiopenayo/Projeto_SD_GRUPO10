@@ -1,4 +1,3 @@
-
 module Botao4(SinalBotao4, posicaofinal1)
     input SinalBotao4;
     output posicaofinal1;
