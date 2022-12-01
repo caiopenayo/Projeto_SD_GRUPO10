@@ -1,3 +1,4 @@
+
 module Posicao2(comparador, din, dout); // modulo que devolve a posição do segundo jogador
     input comparador;
     input[3:0] din;
