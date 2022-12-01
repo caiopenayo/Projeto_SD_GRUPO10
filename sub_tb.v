@@ -1,4 +1,4 @@
-`timescale 1ns/100ps
+`timescale 1ns/100ps;
 module sub_tb;
 
     reg a_tb, b_tb, bin_tb;
