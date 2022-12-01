@@ -1,4 +1,4 @@
-`timescale 1ns/100ps
+`timescale 1ns/100ps;
 module somador_tb;
 
     reg a_tb, b_tb, cin_tb;
