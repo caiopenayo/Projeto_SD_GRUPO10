@@ -1,3 +1,4 @@
+
 module somador4b (a,b,cin,s,cout); // somador de 4 bits
 input [3:0] a,b;
 input cin;
