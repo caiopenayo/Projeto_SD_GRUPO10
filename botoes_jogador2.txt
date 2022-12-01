@@ -1,3 +1,4 @@
+
 module botoes_jogador2(SinalBotao1, SinalBotao2, posicaofinal, posicaoadversaria);
     input reg SinalBotao1, SinalBotao2;
     input wire posicaoadversaria;
