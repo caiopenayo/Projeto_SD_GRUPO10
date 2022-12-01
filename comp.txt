@@ -1,3 +1,4 @@
+
 module comp(a,b,aeqb); //comparador que retorna 1 na saída se os numeros são iguais e 0 se são distintos
 
 output aeqb;
