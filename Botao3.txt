@@ -1,4 +1,5 @@
 
+
 module Botao3(SinalBotao3, posicaofinal, posicaoadversaria);
     input SinalBotao3;
     output posicaofinal, posicaoadversaria;
