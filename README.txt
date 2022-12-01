@@ -1,3 +1,4 @@
+
 INSTRUÇÕES PARA SIMULAÇÃO:
 
 - O módulo principal do protótipo proposto no nosso projeto, ele deverá receber como entradas: a posição do jogador 1 (que, no começo do jogo, é igual a 0), a posição do jogador 2 (que, no começo do jogo, é igual a 15), os sinais (nível lógico alto ou baixo) dos 4 botões (2 para cada jogador) e os números possíveis de 4 bits, que serão úteis no módulo responsável por determinar quais leds deverão ser acesos.
