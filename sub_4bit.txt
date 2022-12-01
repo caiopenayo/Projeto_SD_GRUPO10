@@ -1,3 +1,4 @@
+
 module sub_4bit(d,bo,a,b,bin); //subtrador de 4 bits
 output [3:0]d;
 output bo;
